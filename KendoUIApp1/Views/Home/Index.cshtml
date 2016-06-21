@@ -9,10 +9,21 @@
         </div>
     </div>
 }
+<div>
+    <button id="p1btn">Phase 1</button>
+    <button id="p2btn">Phase 2</button>
+</div>
+<div>
+    <div id="phase1"></div>
+    <div id="phase2" ></div>
+</div>
 
-<div id="gantt"></div>
-<script>
-    $("#gantt").kendoGantt({
+
+<script>    
+    /**********************
+     * PHASE 1
+     *********************/
+    $("#phase1").kendoGantt({
       dataSource: [
             {
                 id: 0,
@@ -59,20 +70,100 @@
         resources: {
             dataSource: [
                 { id: 0, name: "You can extra info like this", color: "green", format: "p0" },
-                { id: 1, name: "This is important info", color: "#ff0000", format: "p0" }
+                { id: 1, name: "This is important info", color: "#ff0000", format: "p1" },
+                { id: 2, name: "Here some cautionary info", color: "#ffff00", format: "p2" }
             ]
         },
         assignments: {
         dataSource: [
             { taskId: 0, resourceId: 0, value: 1 },
-            { taskId: 0, resourceId: 1, value: 1 },
-            { taskId: 1, resourceId: 1, value: 1 }
+            { taskId: 1, resourceId: 1, value: 1 },
+            { taskId: 2, resourceId: 2, value: 1 }
         ]
         },
-        views: ["week"],
+        views: ["week", "month", "year"],
         columns: [
-            { field: "title", title: "Title" },
+            { field: "title", title: "Stage" },
             { field: "resources", title: "Task Resources" }
         ]
+    });
+
+    /**********************
+     * PHASE 2
+     *********************/
+    $("#phase2").kendoGantt({
+        dataSource: [
+              {
+                  id: 5,
+                  orderId: 5,
+                  parentId: null,
+                  title: "Fabrication",
+                  start: new Date("2016/6/15 9:00"),
+                  end: new Date("2016/7/01 11:00"),
+                  complete: "20"
+              },
+              {
+                  id: 6,
+                  orderId: 6,
+                  parentId: null,
+                  title: "Assembly",
+                  start: new Date("2016/6/13 12:00"),
+                  end: new Date("2016/7/06 14:00")
+              },
+              {
+                  id: 7,
+                  orderId: 7,
+                  parentId: null,
+                  title: "Shipment",
+                  start: new Date("2016/6/16 12:00"),
+                  end: new Date("2016/7/11 14:00")
+              },
+              {
+                  id: 8,
+                  orderId: 8,
+                  parentId: null,
+                  title: "Installation",
+                  start: new Date("2016/6/21 12:00"),
+                  end: new Date("2016/7/12 14:00")
+              },
+              {
+                  id: 9,
+                  orderId: 9,
+                  parentId: null,
+                  title: "Signoff",
+                  start: new Date("2016/7/07 12:00"),
+                  end: new Date("2016/7/14 14:00")
+              }
+        ],
+        resources: {
+            dataSource: [
+                { id: 0, name: "You can extra info like this", color: "green", format: "p0" },
+                { id: 1, name: "This is important info", color: "#ff0000", format: "p1" },
+                { id: 2, name: "Here some cautionary info", color: "#ffff00", format: "p2" }
+            ]
+        },
+        assignments: {
+            dataSource: [
+                { taskId: 0, resourceId: 0, value: 1 },
+                { taskId: 1, resourceId: 1, value: 1 },
+                { taskId: 2, resourceId: 2, value: 1 }
+            ]
+        },
+        views: ["week", "month", "year"],
+        columns: [
+            { field: "title", title: "Stage" },
+            { field: "resources", title: "Task Resources" }
+        ]
+    });
+    $(document).ready(function () {
+        $("#phase2").hide();
+        $("#p1btn").click(function () {
+            $("#phase1").show();
+            $("#phase2").hide();
+        });
+        $("#p2btn").click(function () {
+            $("#phase1").hide();
+            $("#phase2").show();
+        });
     });
 </script>
