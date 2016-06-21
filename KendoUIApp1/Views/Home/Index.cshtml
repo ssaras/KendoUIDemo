@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section featured {
+    <div class="featured">
+        <div class="content-wrapper">
+            <h1>Kendo UI Gantt Chart Demo</h1>
+        </div>
+    </div>
+}
+
+<div id="gantt"></div>
+<script>
+    $("#gantt").kendoGantt({
+      dataSource: [
+            {
+                id: 0,
+                orderId: 0,
+                parentId: null,
+                title: "Fabrication",
+                start: new Date("2016/6/13 9:00"),
+                end: new Date("2016/7/01 11:00"),
+                complete: "20"
+            },
+            {
+                id: 1,
+                orderId: 1,
+                parentId: null,
+                title: "Assembly",
+                start: new Date("2016/6/15 12:00"),
+                end: new Date("2016/7/06 14:00")
+            },
+            {
+                id: 2,
+                orderId: 2,
+                parentId: null,
+                title: "Shipment",
+                start: new Date("2016/6/17 12:00"),
+                end: new Date("2016/7/11 14:00")
+            },
+            {
+                id: 3,
+                orderId: 3,
+                parentId: null,
+                title: "Installation",
+                start: new Date("2016/6/21 12:00"),
+                end: new Date("2016/7/12 14:00")
+            },
+            {
+                id: 4,
+                orderId: 4,
+                parentId: null,
+                title: "Signoff",
+                start: new Date("2016/7/07 12:00"),
+                end: new Date("2016/7/14 14:00")
+            }
+        ],
+        resources: {
+            dataSource: [
+                { id: 0, name: "You can extra info like this", color: "green", format: "p0" },
+                { id: 1, name: "This is important info", color: "#ff0000", format: "p0" }
+            ]
+        },
+        assignments: {
+        dataSource: [
+            { taskId: 0, resourceId: 0, value: 1 },
+            { taskId: 0, resourceId: 1, value: 1 },
+            { taskId: 1, resourceId: 1, value: 1 }
+        ]
+        },
+        views: ["week"],
+        columns: [
+            { field: "title", title: "Title" },
+            { field: "resources", title: "Task Resources" }
+        ]
+    });
+</script>
