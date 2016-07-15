@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<KendoUIApp1.Models.Task>
+@using Kendo.Mvc.UI
+@using KendoUIApp1.Models.Gantt
 
 @{
     ViewBag.Title = "Home Page";
@@ -16,7 +18,24 @@
     <button id="p2btn">Phase 2</button>
 </div>
 <div>
-    <div id="phase1"></div>
+    <div id="phase1">
+        @(Html.Kendo().Gantt<TaskViewModel, DependencyViewModel>()
+            .Name("gantt")
+            .Columns(columns =>
+            {
+                columns.Bound(c => c.TaskID).Title("ID").Width(50);
+                columns.Bound("title").Editable(true).Sortable(true);
+                columns.Bound("start").Title("Start Time").Format("{0:MM/dd/yyyy}").Width(100).Editable(true).Sortable(true);
+                columns.Bound("end").Title("End Time").Format("{0:MM/dd/yyyy}").Width(100).Editable(true).Sortable(true);
+            })
+            .Views(views =>
+            {
+                views.DayView();
+                views.WeekView(weekView => weekView.Selected(true));
+                views.MonthView();
+             })
+        )
+    </div>
     <div id="phase2" ></div>
 </div>
 
