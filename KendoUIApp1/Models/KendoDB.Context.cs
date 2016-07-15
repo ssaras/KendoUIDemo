@@ -26,5 +26,6 @@ namespace KendoUIApp1.Models
         }
     
         public DbSet<Task> Tasks { get; set; }
+        public DbSet<Dependency> Dependencies { get; set; }
     }
 }

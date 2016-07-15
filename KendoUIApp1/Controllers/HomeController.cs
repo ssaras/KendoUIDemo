@@ -1,5 +1,6 @@
 ﻿using Kendo.Mvc.UI;
 using KendoUIApp1.Models;
+using KendoUIApp1.Models.Gantt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,13 @@ namespace KendoUIApp1.Controllers
             //return Json(taskService.GetAll().ToDataSourceResult(request));
             List<Task> tasks = KendoDB.Tasks.ToList();
             return Json(tasks);
+        }
+
+        public virtual JsonResult ReadDependencies([DataSourceRequest] DataSourceRequest request)
+        {
+            //return Json(GanttDependencyService.GetAll().ToDataSourceResult(request));
+            List<Dependency> dependencies = KendoDB.Dependencies.ToList();
+            return Json(dependencies);
         }
 
         public ActionResult Index()

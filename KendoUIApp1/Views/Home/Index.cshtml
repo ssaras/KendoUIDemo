@@ -51,19 +51,19 @@
             //.Destroy("DestroyTask", "Home")
             //.Update("UpdateTask", "Home")
             )
-        //.DependenciesDataSource(d => d
-        //    .Model(m =>
-        //    {
-        //        m.Id(f => f.DependencyID);
-        //        m.PredecessorId(f => f.PredecessorID);
-        //        m.SuccessorId(f => f.SuccessorID);
-        //        m.Type(f => f.Type);
-        //    })
-        //    .Read("ReadDependencies", "Home")
-        ////.Create("CreateDependency", "Home")
-        ////.Destroy("DestroyDependency", "Home")
-        ////.Update("UpdateDependency", "Home")
-        //)
+            .DependenciesDataSource(d => d
+                .Model(m =>
+                {
+                    m.Id(f => f.DependencyID);
+                    m.PredecessorId(f => f.PredecessorID);
+                    m.SuccessorId(f => f.SuccessorID);
+                    m.Type(f => f.Type);
+                })
+                .Read("ReadDependencies", "Home")
+            //.Create("CreateDependency", "Home")
+            //.Destroy("DestroyDependency", "Home")
+            //.Update("UpdateDependency", "Home")
+            )
         )
     </div>
     <div id="phase2" ></div>

@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d54d2c285c5241099789a18e2b70cc2f" Name="Diagram1">
         <EntityTypeShape EntityType="KendoDBModel.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KendoDBModel.Dependency" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

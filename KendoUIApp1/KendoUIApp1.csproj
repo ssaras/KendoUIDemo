@@ -171,6 +171,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dependency.cs">
+      <DependentUpon>KendoDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Gantt\DependencyViewModel.cs" />
     <Compile Include="Models\Gantt\GanttDependency.cs" />
     <Compile Include="Models\Gantt\GanttDependencyService.cs" />

@@ -16,5 +16,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Dependencies">
+      <EntityTypeMapping TypeName="KendoDBModel.Dependency">
+        <MappingFragment StoreEntitySet="Dependencies">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SuccessorID" ColumnName="SuccessorID" />
+          <ScalarProperty Name="PredecessorID" ColumnName="PredecessorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
