@@ -171,6 +171,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Gantt\DependencyViewModel.cs" />
+    <Compile Include="Models\Gantt\GanttDependency.cs" />
+    <Compile Include="Models\Gantt\GanttDependencyService.cs" />
+    <Compile Include="Models\Gantt\GanttTask.cs" />
+    <Compile Include="Models\Gantt\GanttTaskService.cs" />
+    <Compile Include="Models\Gantt\TaskViewModel.cs" />
     <Compile Include="Models\KendoDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -33,7 +33,37 @@
                 views.DayView();
                 views.WeekView(weekView => weekView.Selected(true));
                 views.MonthView();
-             })
+            })
+            .Height(700)
+            .ShowWorkHours(false)
+            .ShowWorkDays(false)
+            .Snap(false)
+            .DataSource(d => d
+                .Model(m =>
+                {
+                    m.Id(f => f.TaskID);
+                    m.ParentId(f => f.ParentID);
+                    m.OrderId(f => f.OrderId);
+                    m.Field(f => f.Expanded).DefaultValue(true);
+                })
+                .Read("ReadTasks", "Home")
+            //.Create("CreateTask", "Home")
+            //.Destroy("DestroyTask", "Home")
+            //.Update("UpdateTask", "Home")
+            )
+        //.DependenciesDataSource(d => d
+        //    .Model(m =>
+        //    {
+        //        m.Id(f => f.DependencyID);
+        //        m.PredecessorId(f => f.PredecessorID);
+        //        m.SuccessorId(f => f.SuccessorID);
+        //        m.Type(f => f.Type);
+        //    })
+        //    .Read("ReadDependencies", "Home")
+        ////.Create("CreateDependency", "Home")
+        ////.Destroy("DestroyDependency", "Home")
+        ////.Update("UpdateDependency", "Home")
+        //)
         )
     </div>
     <div id="phase2" ></div>
