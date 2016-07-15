@@ -18,5 +18,38 @@ namespace KendoUIApp1.Models.Gantt
             List<Task> tasks = KendoDB.Tasks.ToList();
             return (tasks);
         }
+
+        public virtual void Insert(TaskViewModel task, ModelStateDictionary modelState)
+        {
+            if (ValidateModel(task, modelState))
+            {
+                //List<Task> tasks = KendoDB.Tasks.ToList();
+
+                //var db = KendoDB.Tasks;
+
+                //if (string.IsNullOrEmpty(task.Title))
+                //{
+                //    task.Title = "";
+                //}
+
+                //var entity = task.ToEntity();
+
+                //db.Add(entity);
+                //db.SaveChanges();
+
+                //task.TaskID = entity.ID;
+            }
+        }
+
+        private bool ValidateModel(TaskViewModel task, ModelStateDictionary modelState)
+        {
+            if (task.Start > task.End)
+            {
+                modelState.AddModelError("errors", "End date must be greater or equal to Start date.");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

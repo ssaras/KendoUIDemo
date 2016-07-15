@@ -47,9 +47,9 @@
                     m.Field(f => f.Expanded).DefaultValue(true);
                 })
                 .Read("ReadTasks", "Home")
-            //.Create("CreateTask", "Home")
-            //.Destroy("DestroyTask", "Home")
-            //.Update("UpdateTask", "Home")
+                .Create("CreateTask", "Home")
+                //.Destroy("DestroyTask", "Home")
+                //.Update("UpdateTask", "Home")
             )
             .DependenciesDataSource(d => d
                 .Model(m =>

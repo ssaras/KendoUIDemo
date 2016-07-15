@@ -23,17 +23,28 @@ namespace KendoUIApp1.Controllers
         }
 
         public virtual JsonResult ReadTasks([DataSourceRequest] DataSourceRequest request)
-        {
-            //return Json(taskService.GetAll().ToDataSourceResult(request));
+        {            
             List<Task> tasks = KendoDB.Tasks.ToList();
-            return Json(tasks);
+            return Json(tasks.ToDataSourceResult(request));
+        }
+
+        public virtual JsonResult CreateTask([DataSourceRequest] DataSourceRequest request, Task task)
+        {
+            if (ModelState.IsValid)
+            {
+                KendoDB.Tasks.Add(task);
+                KendoDB.SaveChanges();                
+            }
+
+            return Json(new[] { task }.ToDataSourceResult(request, ModelState));
         }
 
         public virtual JsonResult ReadDependencies([DataSourceRequest] DataSourceRequest request)
         {
-            //return Json(GanttDependencyService.GetAll().ToDataSourceResult(request));
             List<Dependency> dependencies = KendoDB.Dependencies.ToList();
             return Json(dependencies);
+
+            //return Json(GanttDependencyService.GetAll().ToDataSourceResult(request));
         }
 
         public ActionResult Index()
