@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KendoUIApp1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace KendoUIApp1.Controllers
 {
     public class HomeController : Controller
     {
+        private KendoDBEntities KendoDB = new KendoDBEntities();
+
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
@@ -27,6 +30,13 @@ namespace KendoUIApp1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult TaskView()
+        {
+            ViewBag.Message = "Your Task view page.";
+            List < Task > tasks = KendoDB.Tasks.ToList();
+            return View(tasks);
         }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\ApplicationInsights.config
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\KendoUIApp1Tests.dll
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\KendoUIApp1Tests.pdb
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\obj\Debug\KendoUIApp1Tests.csprojResolveAssemblyReference.cache
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\obj\Debug\KendoUIApp1Tests.dll
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1Tests\obj\Debug\KendoUIApp1Tests.pdb
