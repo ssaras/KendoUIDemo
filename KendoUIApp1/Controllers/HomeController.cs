@@ -1,4 +1,5 @@
-﻿using Kendo.Mvc.UI;
+﻿using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 using KendoUIApp1.Models;
 using KendoUIApp1.Models.Gantt;
 using System;
@@ -13,6 +14,13 @@ namespace KendoUIApp1.Controllers
     public class HomeController : Controller
     {
         private KendoDBEntities KendoDB = new KendoDBEntities();
+
+        private GanttTaskService taskService;
+
+        public HomeController()
+        {
+            taskService = new GanttTaskService();
+        }
 
         public virtual JsonResult ReadTasks([DataSourceRequest] DataSourceRequest request)
         {
