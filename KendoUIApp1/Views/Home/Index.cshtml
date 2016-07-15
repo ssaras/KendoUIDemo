@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<KendoUIApp1.Models.Task>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -18,75 +20,143 @@
     <div id="phase2" ></div>
 </div>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Summary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expanded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PercentComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expanded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PercentComplete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TaskID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TaskID })
+            </td>
+        </tr>
+    }
+
+</table>
 
 <script>    
     /**********************
      * PHASE 1
      *********************/
-    $("#phase1").kendoGantt({
-      dataSource: [
-            {
-                id: 0,
-                orderId: 0,
-                parentId: null,
-                title: "Fabrication",
-                start: new Date("2016/6/13 9:00"),
-                end: new Date("2016/7/01 11:00"),
-                complete: "20"
-            },
-            {
-                id: 1,
-                orderId: 1,
-                parentId: null,
-                title: "Assembly",
-                start: new Date("2016/6/15 12:00"),
-                end: new Date("2016/7/06 14:00")
-            },
-            {
-                id: 2,
-                orderId: 2,
-                parentId: null,
-                title: "Shipment",
-                start: new Date("2016/6/17 12:00"),
-                end: new Date("2016/7/11 14:00")
-            },
-            {
-                id: 3,
-                orderId: 3,
-                parentId: null,
-                title: "Installation",
-                start: new Date("2016/6/21 12:00"),
-                end: new Date("2016/7/12 14:00")
-            },
-            {
-                id: 4,
-                orderId: 4,
-                parentId: null,
-                title: "Signoff",
-                start: new Date("2016/7/07 12:00"),
-                end: new Date("2016/7/14 14:00")
-            }
-        ],
-        resources: {
-            dataSource: [
-                { id: 0, name: "You can extra info like this", color: "green", format: "p0" },
-                { id: 1, name: "This is important info", color: "#ff0000", format: "p1" },
-                { id: 2, name: "Here some cautionary info", color: "#ffff00", format: "p2" }
-            ]
-        },
-        assignments: {
-        dataSource: [
-            { taskId: 0, resourceId: 0, value: 1 },
-            { taskId: 1, resourceId: 1, value: 1 },
-            { taskId: 2, resourceId: 2, value: 1 }
-        ]
-        },
-        views: ["week", "month", "year"],
-        columns: [
-            { field: "title", title: "Stage" },
-            { field: "resources", title: "Task Resources" }
-        ]
-    });
+    //$("#phase1").kendoGantt({
+    //  dataSource: [
+    //        {
+    //            id: 0,
+    //            orderId: 0,
+    //            parentId: null,
+    //            title: "Fabrication",
+    //            start: new Date("2016/6/13 9:00"),
+    //            end: new Date("2016/7/01 11:00"),
+    //            complete: "20"
+    //        },
+    //        {
+    //            id: 1,
+    //            orderId: 1,
+    //            parentId: null,
+    //            title: "Assembly",
+    //            start: new Date("2016/6/15 12:00"),
+    //            end: new Date("2016/7/06 14:00")
+    //        },
+    //        {
+    //            id: 2,
+    //            orderId: 2,
+    //            parentId: null,
+    //            title: "Shipment",
+    //            start: new Date("2016/6/17 12:00"),
+    //            end: new Date("2016/7/11 14:00")
+    //        },
+    //        {
+    //            id: 3,
+    //            orderId: 3,
+    //            parentId: null,
+    //            title: "Installation",
+    //            start: new Date("2016/6/21 12:00"),
+    //            end: new Date("2016/7/12 14:00")
+    //        },
+    //        {
+    //            id: 4,
+    //            orderId: 4,
+    //            parentId: null,
+    //            title: "Signoff",
+    //            start: new Date("2016/7/07 12:00"),
+    //            end: new Date("2016/7/14 14:00")
+    //        }
+    //    ],
+    //    resources: {
+    //        dataSource: [
+    //            { id: 0, name: "You can extra info like this", color: "green", format: "p0" },
+    //            { id: 1, name: "This is important info", color: "#ff0000", format: "p1" },
+    //            { id: 2, name: "Here some cautionary info", color: "#ffff00", format: "p2" }
+    //        ]
+    //    },
+    //    assignments: {
+    //    dataSource: [
+    //        { taskId: 0, resourceId: 0, value: 1 },
+    //        { taskId: 1, resourceId: 1, value: 1 },
+    //        { taskId: 2, resourceId: 2, value: 1 }
+    //    ]
+    //    },
+    //    views: ["week", "month", "year"],
+    //    columns: [
+    //        { field: "title", title: "Stage" },
+    //        { field: "resources", title: "Task Resources" }
+    //    ]
+    //});
 
     /**********************
      * PHASE 2

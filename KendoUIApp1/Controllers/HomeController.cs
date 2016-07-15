@@ -14,8 +14,8 @@ namespace KendoUIApp1.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
-
-            return View();
+            List<Task> tasks = KendoDB.Tasks.ToList();
+            return View(tasks);
         }
 
         public ActionResult About()
