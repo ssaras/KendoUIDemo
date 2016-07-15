@@ -34,7 +34,7 @@
                 views.WeekView(weekView => weekView.Selected(true));
                 views.MonthView();
             })
-            .Height(700)
+            .Height(500)
             .ShowWorkHours(false)
             .ShowWorkDays(false)
             .Snap(false)
@@ -48,8 +48,8 @@
                 })
                 .Read("ReadTasks", "Home")
                 .Create("CreateTask", "Home")
-                //.Destroy("DestroyTask", "Home")
-                //.Update("UpdateTask", "Home")
+            //.Destroy("DestroyTask", "Home")
+            //.Update("UpdateTask", "Home")
             )
             .DependenciesDataSource(d => d
                 .Model(m =>
