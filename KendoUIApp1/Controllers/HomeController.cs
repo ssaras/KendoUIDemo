@@ -55,5 +55,12 @@ namespace KendoUIApp1.Controllers
             List < Task > tasks = KendoDB.Tasks.ToList();
             return View(tasks);
         }
+
+        public ActionResult DependencyView()
+        {
+            ViewBag.Message = "Your dependency view page.";
+            List<Dependency> dependencies = KendoDB.Dependencies.ToList();
+            return View(dependencies);
+        }
     }
 }
