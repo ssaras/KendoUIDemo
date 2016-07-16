@@ -62,7 +62,9 @@ namespace KendoUIApp1.Controllers
         {
             if (ModelState.IsValid)
             {
-                KendoDB.Tasks.Remove(task);
+                Task taskForDeletion = KendoDB.Tasks.Find(task.TaskID);
+                KendoDB.Tasks.Remove(taskForDeletion);
+                KendoDB.SaveChanges();
             }
 
             return Json(new[] { task }.ToDataSourceResult(request, ModelState));
