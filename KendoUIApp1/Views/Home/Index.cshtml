@@ -46,10 +46,10 @@
                     m.OrderId(f => f.OrderId);
                     m.Field(f => f.Expanded).DefaultValue(true);
                 })
-                .Read("ReadTasks", "Home")
                 .Create("CreateTask", "Home")
-            //.Destroy("DestroyTask", "Home")
-            //.Update("UpdateTask", "Home")
+                .Read("ReadTasks", "Home")
+                .Update("UpdateTask", "Home")
+                .Destroy("DestroyTask", "Home")
             )
             .DependenciesDataSource(d => d
                 .Model(m =>

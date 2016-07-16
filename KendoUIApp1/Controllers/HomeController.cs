@@ -4,6 +4,7 @@ using KendoUIApp1.Models;
 using KendoUIApp1.Models.Gantt;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,12 +23,10 @@ namespace KendoUIApp1.Controllers
             taskService = new GanttTaskService();
         }
 
-        public virtual JsonResult ReadTasks([DataSourceRequest] DataSourceRequest request)
-        {            
-            List<Task> tasks = KendoDB.Tasks.ToList();
-            return Json(tasks.ToDataSourceResult(request));
-        }
-
+        /*************************
+         * Gantt Task Methods
+         ************************/
+        
         public virtual JsonResult CreateTask([DataSourceRequest] DataSourceRequest request, Task task)
         {
             if (ModelState.IsValid)
@@ -39,6 +38,40 @@ namespace KendoUIApp1.Controllers
             return Json(new[] { task }.ToDataSourceResult(request, ModelState));
         }
 
+        public virtual void UpdateTask(Task task)
+        {
+            if (ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(task.Title))
+                {
+                    task.Title = "";
+                }
+
+                KendoDB.Entry(task).State = EntityState.Modified;
+                KendoDB.SaveChanges();
+            }
+        }
+
+        public virtual JsonResult ReadTasks([DataSourceRequest] DataSourceRequest request)
+        {
+            List<Task> tasks = KendoDB.Tasks.ToList();
+            return Json(tasks.ToDataSourceResult(request));
+        }
+
+        public virtual JsonResult DestroyTask([DataSourceRequest] DataSourceRequest request, Task task)
+        {
+            if (ModelState.IsValid)
+            {
+                KendoDB.Tasks.Remove(task);
+            }
+
+            return Json(new[] { task }.ToDataSourceResult(request, ModelState));
+        }
+
+        /********************************
+         * Gantt Dependency Methods 
+         *******************************/
+
         public virtual JsonResult ReadDependencies([DataSourceRequest] DataSourceRequest request)
         {
             List<Dependency> dependencies = KendoDB.Dependencies.ToList();
@@ -46,6 +79,10 @@ namespace KendoUIApp1.Controllers
 
             //return Json(GanttDependencyService.GetAll().ToDataSourceResult(request));
         }
+
+        /**************************
+         * View Methods
+         *************************/
 
         public ActionResult Index()
         {

@@ -36,7 +36,6 @@ C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\System.Web.
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\System.Web.WebPages.Razor.xml
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\obj\Debug\KendoUIApp1.dll
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\obj\Debug\KendoUIApp1.pdb
-C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\obj\Debug\KendoUIApp1.csprojResolveAssemblyReference.cache
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\EntityFramework.dll
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\Kendo.Mvc.dll
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\MySql.Data.dll
