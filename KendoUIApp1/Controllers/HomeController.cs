@@ -20,7 +20,7 @@ namespace KendoUIApp1.Controllers
 
         public HomeController()
         {
-            taskService = new GanttTaskService();
+            //taskService = new GanttTaskService();
         }
 
         /*************************
