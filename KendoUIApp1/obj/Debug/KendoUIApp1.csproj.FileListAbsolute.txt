@@ -68,3 +68,4 @@ C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\sv-SE\Kendo
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\tr-TR\Kendo.Mvc.resources.dll
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\uk-UA\Kendo.Mvc.resources.dll
 C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Users\Shawn\Documents\_PROJECTS\cmacs\KendoUIApp1\KendoUIApp1\obj\Debug\KendoUIApp1.csprojResolveAssemblyReference.cache

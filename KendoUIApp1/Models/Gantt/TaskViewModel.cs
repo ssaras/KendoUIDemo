@@ -44,6 +44,7 @@ namespace KendoUIApp1.Models.Gantt
         public bool Expanded { get; set; }
         public decimal PercentComplete { get; set; }
         public int OrderId { get; set; }
+        public string Duration { get; set; }
 
         public GanttTaskService ToEntity()
         {
@@ -56,7 +57,8 @@ namespace KendoUIApp1.Models.Gantt
                 Summary = Summary,
                 Expanded = Expanded,
                 PercentComplete = PercentComplete,
-                OrderID = OrderId
+                OrderID = OrderId,
+                Duration = Duration
             };
         }
     }

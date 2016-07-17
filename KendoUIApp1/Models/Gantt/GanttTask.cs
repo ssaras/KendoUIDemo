@@ -12,5 +12,6 @@ namespace KendoUIApp1.Models.Gantt
         public DateTime Start { get; set; }
         public bool Summary { get; set; }
         public string Title { get; set; }
+        public string Duration { get; set; }
     }
 }

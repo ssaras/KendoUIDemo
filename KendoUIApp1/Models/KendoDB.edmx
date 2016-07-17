@@ -23,6 +23,7 @@
           <Property Name="Title" Type="varchar" MaxLength="45" />
           <Property Name="Start" Type="datetime" Precision="0" />
           <Property Name="End" Type="datetime" Precision="0" />
+          <Property Name="Duration" Type="varchar" MaxLength="45" />
           <Property Name="Summary" Type="bool" />
           <Property Name="Expanded" Type="bool" />
           <Property Name="PercentComplete" Type="decimal" Precision="10" Scale="0" />
@@ -49,6 +50,7 @@
           <Property Name="Expanded" Type="Boolean" />
           <Property Name="PercentComplete" Type="Decimal" />
           <Property Name="OrderId" Type="Int32" />
+          <Property Name="Duration" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="KendoDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tasks" EntityType="Self.Task" />
@@ -72,6 +74,7 @@
           <EntitySetMapping Name="Tasks">
             <EntityTypeMapping TypeName="KendoDBModel.Task">
               <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
                 <ScalarProperty Name="TaskID" ColumnName="TaskID" />
                 <ScalarProperty Name="ParentID" ColumnName="ParentID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

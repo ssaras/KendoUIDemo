@@ -23,5 +23,6 @@ namespace KendoUIApp1.Models
         public Nullable<bool> Expanded { get; set; }
         public Nullable<decimal> PercentComplete { get; set; }
         public Nullable<int> OrderId { get; set; }
+        public string Duration { get; set; }
     }
 }

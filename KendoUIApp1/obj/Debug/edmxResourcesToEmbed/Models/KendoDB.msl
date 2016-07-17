@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Tasks">
       <EntityTypeMapping TypeName="KendoDBModel.Task">
         <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
           <ScalarProperty Name="TaskID" ColumnName="TaskID" />
           <ScalarProperty Name="ParentID" ColumnName="ParentID" />
           <ScalarProperty Name="Title" ColumnName="Title" />

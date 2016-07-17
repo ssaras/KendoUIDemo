@@ -13,6 +13,7 @@
     <Property Name="Expanded" Type="Boolean" />
     <Property Name="PercentComplete" Type="Decimal" />
     <Property Name="OrderId" Type="Int32" />
+    <Property Name="Duration" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="KendoDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Tasks" EntityType="Self.Task" />

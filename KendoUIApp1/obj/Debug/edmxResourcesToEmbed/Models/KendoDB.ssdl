@@ -18,6 +18,7 @@
     <Property Name="Title" Type="varchar" MaxLength="45" />
     <Property Name="Start" Type="datetime" Precision="0" />
     <Property Name="End" Type="datetime" Precision="0" />
+    <Property Name="Duration" Type="varchar" MaxLength="45" />
     <Property Name="Summary" Type="bool" />
     <Property Name="Expanded" Type="bool" />
     <Property Name="PercentComplete" Type="decimal" Precision="10" Scale="0" />
