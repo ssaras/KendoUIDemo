@@ -77,9 +77,41 @@ namespace KendoUIApp1.Controllers
         public virtual JsonResult ReadDependencies([DataSourceRequest] DataSourceRequest request)
         {
             List<Dependency> dependencies = KendoDB.Dependencies.ToList();
-            return Json(dependencies);
+            return Json(dependencies.ToDataSourceResult(request));
+        }
 
-            //return Json(GanttDependencyService.GetAll().ToDataSourceResult(request));
+        public virtual JsonResult CreateDependency([DataSourceRequest] DataSourceRequest request, Dependency dependency)
+        {
+            if (ModelState.IsValid)
+            {
+                KendoDB.Dependencies.Add(dependency);
+                KendoDB.SaveChanges();
+            }
+
+            return Json(new[] { dependency }.ToDataSourceResult(request, ModelState));
+        }
+
+        public virtual JsonResult UpdateDependency([DataSourceRequest] DataSourceRequest request, Dependency dependency)
+        {
+            if (ModelState.IsValid)
+            {
+                KendoDB.Entry(dependency).State = EntityState.Modified;
+                KendoDB.SaveChanges();
+            }
+
+            return Json(new[] { dependency }.ToDataSourceResult(request, ModelState));
+        }
+
+        public virtual JsonResult DestroyDependency([DataSourceRequest] DataSourceRequest request, Dependency dependency)
+        {
+            if (ModelState.IsValid)
+            {
+                Dependency dependencyForDeletion = KendoDB.Dependencies.Find(dependency.ID);
+                KendoDB.Dependencies.Remove(dependencyForDeletion);
+                KendoDB.SaveChanges();
+            }
+
+            return Json(new[] { dependency }.ToDataSourceResult(request, ModelState));
         }
 
         /**************************
